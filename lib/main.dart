@@ -42,28 +42,55 @@ class _MyHomePageState extends State<MyHomePage> {
           body: Center(
             child: Container(
               width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(0, 0, 0, 0.1),
-                    padding: EdgeInsets.symmetric(vertical: 30, horizontal: 40),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                  ),
-                  child: Text(
-                    "Add an Image",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300,
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(30),
+                      child: Text(
+                        "Image Capture and Upload",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                        ),
+                      ),
                     ),
-                  ),
-                  onPressed: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AddImage()))
-                  },
-                ),
-              ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 30),
+                          child: Text(
+                            "Add a Picture from gallery or take from camera and upload it to the server. Click Below to add Image",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromRGBO(0, 0, 0, 0.1),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 30, horizontal: 40),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30)),
+                          ),
+                          child: Text(
+                            "Add an Image",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddImage()))
+                          },
+                        ),
+                      ],
+                    )
+                  ]),
             ),
           )),
     );

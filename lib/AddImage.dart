@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,10 @@ class _AddImageState extends State<AddImage> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => DisplayPicture(image: _image)));
+                builder: (context) => DisplayPicture(
+                      image: _image,
+                      context: context,
+                    )));
       }
     } catch (e) {
       showAlert(
@@ -58,7 +60,10 @@ class _AddImageState extends State<AddImage> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => DisplayPicture(image: _image)));
+              builder: (context) => DisplayPicture(
+                    image: _image,
+                    context: context,
+                  )));
     }
   }
 
